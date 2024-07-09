@@ -142,7 +142,7 @@ const MoviesGrid = ({ page }: IProps) => {
                 ))}
           </div>
         ) : (
-          <div className="w-full mx-auto min-h-[300px] my-20 ">
+          <div className="w-full mx-auto min-h-[500px] my-20 ">
             <div className="text-center font-bold">Loading...</div>
           </div>
         )}

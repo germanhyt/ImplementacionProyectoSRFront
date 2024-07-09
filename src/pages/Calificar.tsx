@@ -21,8 +21,8 @@ const Calificar = (): JSX.Element => {
       rating: 0,
     },
     onSubmit: (values) => {
-      // Calculo aleatorio para userId entre 1 y 7045
-      const userId = Math.floor(Math.random() * (7045 - 1 + 1)) + 1;
+      // Calculo aleatorio para userId entre 1 y 50
+      const userId = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
       values.userId = String(userId);
 
       void saveRating(values);

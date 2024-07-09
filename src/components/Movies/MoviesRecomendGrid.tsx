@@ -19,12 +19,18 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
       console.log("inputdata.current.value", inputdata.current.value);
       setUserId(parseInt(inputdata.current.value));
     }
+
+    const userId = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
+
+    if (userId) {
+      setUserId(Number(userId));
+    }
   };
 
   return (
     <>
       <section className="w-full container mx-auto my-8 sm:my-10">
-        {page === "home"  && (
+        {page === "home" && (
           <>
             <div
               className="
