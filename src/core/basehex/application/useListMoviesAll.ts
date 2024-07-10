@@ -4,10 +4,13 @@ import { LIST_MOVIES_ALL } from "./QueryKeys";
 
 import { movieRepository } from "../infrastructure";
 
-const useListMoviesAll = (): UseQueryResult<Movie[], Error> => {
+const useListMoviesAll = (
+  q: number,
+  p: number
+): UseQueryResult<Movie[], Error> => {
   const response = useQuery({
     queryKey: [LIST_MOVIES_ALL],
-    queryFn: async () => await movieRepository.MoviesListAll(),
+    queryFn: async () => await movieRepository.MoviesListAll(q, p),
     retry: 0,
     refetchOnWindowFocus: false,
   });

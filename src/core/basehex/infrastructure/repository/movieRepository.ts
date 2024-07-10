@@ -5,10 +5,12 @@ import axios, { AxiosResponse } from "axios";
 import MoviesRecomend from "../../domain/MoviesRecomend";
 import MoviesRecomendResponseMap from "../model/MoviesRecomendResponseMap";
 
-export const MoviesListAll = async (): Promise<Movie[]> => {
+export const MoviesListAll = async (q: number, p: number): Promise<Movie[]> => {
   const response: AxiosResponse<MovieResponseMap[]> = await axios.get(
-    `${API_BASE_URL}/peliculas`
+    `${API_BASE_URL}/peliculas?q=${q}&p=${p}`
   );
+
+  // console.log(response.data);
 
   const movies = response.data.map((item) => {
     const movie: Movie = {

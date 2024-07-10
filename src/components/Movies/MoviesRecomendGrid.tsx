@@ -1,5 +1,5 @@
 import MovieSingle from "@/components/Movies/MovieSingle";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { MoviesRecomendContext } from "@/core/hooks/MoviesRecomendContext";
 
 interface IProps {
@@ -14,17 +14,24 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
   // Obtener el valor del userId del input y luego setear el user id
   const inputdata = useRef<HTMLInputElement>(null);
 
+  useEffect(() => {
+    const userId = Math.floor(Math.random() * (7895 - 1 + 1)) + 1;
+
+    if (userId) {
+      setUserId(Number(userId));
+    }
+  }, []);
+
   const handleUserId = () => {
     if (inputdata.current) {
       console.log("inputdata.current.value", inputdata.current.value);
       setUserId(parseInt(inputdata.current.value));
     }
 
-    const userId = Math.floor(Math.random() * (50 - 1 + 1)) + 1;
-
-    if (userId) {
-      setUserId(Number(userId));
-    }
+    // const userId = Math.floor(Math.random() * (7895 - 1 + 1)) + 1;
+    // if (userId) {
+    //   setUserId(Number(userId) ?? 50);
+    // }
   };
 
   return (

@@ -606,11 +606,32 @@ video {
 .h-full {
   height: 100%;
 }
-.min-h-\[300px\] {
-  min-height: 300px;
+.min-h-\[1000px\] {
+  min-height: 1000px;
 }
 .min-h-\[500px\] {
   min-height: 500px;
+}
+.min-h-\[100vh\] {
+  min-height: 100vh;
+}
+.min-h-\[100vh-40px\] {
+  min-height: 100vh-40px;
+}
+.min-h-\[100vh-40\] {
+  min-height: 100vh-40;
+}
+.min-h-\[100vh-1px\] {
+  min-height: 100vh-1px;
+}
+.min-h-\[95vh\] {
+  min-height: 95vh;
+}
+.min-h-\[90vh\] {
+  min-height: 90vh;
+}
+.min-h-\[80vh\] {
+  min-height: 80vh;
 }
 .w-10 {
   width: 2.5rem;

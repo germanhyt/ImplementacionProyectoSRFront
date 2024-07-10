@@ -18,8 +18,8 @@ interface SwalOptions {
 }
 
 const optionsAlert: SwalOptions = {
-  title: "SANIPES",
-  html: "Organismo Nacional de Sanidad Pesquera",
+  title: "ALERT!",
+  html: "",
   customClass: {
     confirmButton: "btn btn-primary mx-1",
     cancelButton: "btn btn-danger mx-1",

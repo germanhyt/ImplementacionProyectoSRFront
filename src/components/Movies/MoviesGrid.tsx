@@ -1,9 +1,8 @@
 import MoviesContext from "@/core/hooks/MoviesContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import MoviesFilter from "./MoviesFilter";
 import MovieSingle from "./MovieSingle";
-import { Link } from "react-router-dom";
 
 interface IProps {
   page: any;
@@ -19,6 +18,12 @@ const MoviesGrid = ({ page }: IProps) => {
     searchMovieByTitle,
     sectectMovieByGenre,
   } = useContext(MoviesContext);
+
+  const [limitmovieshomepage, setLimitmovieshomepage] = useState<number>(6);
+
+  const handleScrollInfinite = () => {
+    setLimitmovieshomepage((limitmovieshomepage) => limitmovieshomepage + 6);
+  };
 
   return (
     <>
@@ -123,7 +128,7 @@ const MoviesGrid = ({ page }: IProps) => {
                 ))
               : page === "home"
               ? movies
-                  .filter((_p, index) => index < 6)
+                  .filter((_p, index) => index < limitmovieshomepage ?? 6)
                   .map((movie) => (
                     <MovieSingle
                       title={movie.title}
@@ -147,13 +152,16 @@ const MoviesGrid = ({ page }: IProps) => {
           </div>
         )}
       </section>
-      <Link to="/peliculas">
-        <div className="w-full flex items-center justify-center my-10">
-          <button className="bg-primary-dark px-4 py-2 rounded-sm text-primary-light">
-            Ver más
-          </button>
-        </div>
-      </Link>
+      {/* <Link to="/peliculas"> */}
+      <div className="w-full flex items-center justify-center my-10">
+        <button
+          onClick={handleScrollInfinite}
+          className="bg-primary-dark px-4 py-2 rounded-sm text-primary-light"
+        >
+          Ver más
+        </button>
+      </div>
+      {/* </Link> */}
     </>
   );
 };

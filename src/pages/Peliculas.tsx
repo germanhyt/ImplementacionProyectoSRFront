@@ -2,6 +2,8 @@ import MoviesRecomendGrid from "@/components/Movies/MoviesRecomendGrid";
 import { MoviesRecomendProvider } from "@/core/hooks/MoviesRecomendContext";
 
 const Peliculas = () => {
+  // recuperar los queryparams
+
   return (
     <div className="mt-20">
       <section className="">

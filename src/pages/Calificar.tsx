@@ -12,7 +12,7 @@ const Calificar = (): JSX.Element => {
   const navigate = useNavigate();
 
   const { title, genres, prediction } = localtion.state;
-  console.log(title, genres, prediction, id);
+  // console.log(title, genres, prediction, id);
 
   const formik = useFormik<Rating>({
     initialValues: {
@@ -29,7 +29,8 @@ const Calificar = (): JSX.Element => {
     },
   });
 
-  const { mutateAsync: mutateAsyncCreate } = useCreateRating();
+  const { mutateAsync: mutateAsyncCreate, isPending: isPendingCreate } =
+    useCreateRating();
 
   const saveRating = async (payload: RatingRequest): Promise<void> => {
     try {
@@ -44,7 +45,7 @@ const Calificar = (): JSX.Element => {
 
   return (
     <>
-      <section className="w-full container mx-auto my-8 sm:my-10">
+      <section className="w-full min-h-[80vh] container mx-auto my-8 sm:my-10 ">
         <div className="flex ">
           <div className="px-20">
             <img
@@ -71,21 +72,38 @@ const Calificar = (): JSX.Element => {
               >
                 Cancelar
               </button>
-              <button
-                className="
+              {isPendingCreate ? (
+                <div
+                  className="
+                text-primary-dark
+                border-2
+                border-primary-dark
+                font-bold
+                py-2
+                px-4
+                rounded-md"
+                >
+                  Loading...
+                </div>
+              ) : (
+                <>
+                  <button
+                    className="
                 bg-primary-dark
                 text-primary-light
                 font-bold
                 py-2
                 px-4
                 rounded-md"
-                type="button"
-                onClick={() => {
-                  formik.handleSubmit();
-                }}
-              >
-                Guardar
-              </button>
+                    type="button"
+                    onClick={() => {
+                      formik.handleSubmit();
+                    }}
+                  >
+                    Guardar
+                  </button>
+                </>
+              )}
             </div>
             <div className="h-full flex flex-col gap-8 justify-center items-start">
               <div className="flex flex-col gap-4">
