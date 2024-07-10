@@ -10,6 +10,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Peliculas = lazy(() => import("./pages/Peliculas"));
 const Recomend = lazy(() => import("./pages/Recomend"));
 const Calificar = lazy(() => import("./pages/Calificar"));
+const Login = lazy(() => import("./pages/Login"));
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/recomendacion" element={<Recomend />} />
             <Route path="/peliculas" element={<Peliculas />} />
             <Route path="/peliculas/:id" element={<Calificar />} />
+            <Route path="/Login" element={<Login />} />
           </Routes>
         </Suspense>
         <Footer />
