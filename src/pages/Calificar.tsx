@@ -12,7 +12,7 @@ const Calificar = (): JSX.Element => {
   const navigate = useNavigate();
 
   const { title, genres, prediction } = localtion.state;
-  // console.log(title, genres, prediction, id);
+  console.log(title, genres, prediction, id);
 
   const formik = useFormik<Rating>({
     initialValues: {
