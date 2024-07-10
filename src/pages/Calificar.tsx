@@ -55,7 +55,7 @@ const Calificar = (): JSX.Element => {
             />
           </div>
           <div className="">
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-end">
               <button
                 className="
                 text-primary-dark
