@@ -15,8 +15,8 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
   const inputdata = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const userId = Math.floor(Math.random() * (7895 - 1 + 1)) + 1;
-
+    const userId = Math.floor(Math.random() * (30 - 1 + 1)) + 1;
+    console.log("userId", userId);
     if (userId) {
       setUserId(Number(userId));
     }
@@ -36,7 +36,7 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
 
   return (
     <>
-      <section className="w-full container mx-auto my-8 sm:my-10">
+      <section className=" w-full container mx-auto my-8 sm:my-10">
         {page === "home" && (
           <>
             <div
@@ -123,14 +123,14 @@ const MoviesRecomendGrid = ({ page }: IProps) => {
                     ))}
               </div>
             ) : (
-              <div className="w-full mx-auto min-h-[500px] my-20 ">
+              <div className="w-full mx-auto  my-20 ">
                 <div className="text-center font-bold">Loading...</div>
               </div>
             )}
           </>
         ) : (
           <>
-            <div className="w-full mx-auto min-h-[500px] my-20 ">
+            <div className="w-full mx-auto  my-20 ">
               <div className="text-center font-bold">Loading...</div>
             </div>
           </>

@@ -45,7 +45,7 @@ const Calificar = (): JSX.Element => {
 
   return (
     <>
-      <section className="w-full min-h-[80vh] container mx-auto my-8 sm:my-10 ">
+      <section className="w-full min-h-[100vh]  container mx-auto my-8 sm:my-10 ">
         <div className="flex ">
           <div className="px-20">
             <img

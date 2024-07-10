@@ -3,7 +3,7 @@ import { MoviesRecomendProvider } from "@/core/hooks/MoviesRecomendContext";
 
 const Recomend = () => {
   return (
-    <div>
+    <div className="min-h-[100vh] ">
       <section>
         <MoviesRecomendProvider>
           <MoviesRecomendGrid page="recomendacion" />

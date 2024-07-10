@@ -5,8 +5,8 @@ const Peliculas = () => {
   // recuperar los queryparams
 
   return (
-    <div className="mt-20">
-      <section className="">
+    <div className="min-h-[100vh] ">
+      <section className="mt-20">
         <MoviesRecomendProvider>
           <MoviesRecomendGrid page="peliculas" />
         </MoviesRecomendProvider>
